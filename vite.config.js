@@ -1,4 +1,6 @@
 import { defineConfig } from "vite";
+import cleanPlugin from "vite-plugin-clean";
+import { createHtmlPlugin } from "vite-plugin-html";
 
 export default defineConfig({
   base: '/mazing/',
@@ -15,5 +17,24 @@ export default defineConfig({
         }
       }
     }
-  }
+  },
+  plugins: [
+    createHtmlPlugin({
+      minify: true,
+      pages: [
+        {
+          entry: '/src/main.ts',
+          filename: 'index.html',
+          template: 'index.html'
+        },
+        {
+          filename: '/src/main.html',
+          template: '/src/main.html'
+        }
+      ]
+    }),
+    cleanPlugin({
+      targetFiles: ['dist']
+    })
+  ]
 });
