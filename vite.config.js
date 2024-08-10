@@ -23,7 +23,7 @@ export default defineConfig({
       minify: true,
       pages: [
         {
-          entry: '/src/main.ts',
+          entry: '/src/index.ts',
           filename: 'index.html',
           template: 'index.html'
         },
