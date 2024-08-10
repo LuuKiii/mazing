@@ -27,10 +27,6 @@ export default defineConfig({
           filename: 'index.html',
           template: 'index.html'
         },
-        {
-          filename: '/src/main.html',
-          template: '/src/main.html'
-        }
       ]
     }),
     cleanPlugin({
